@@ -1,0 +1,26 @@
+{% extends "nav_bar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/register_user.css') }}>
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="application/json">
+    <h1>Регистрация</h1>
+    username
+    <br/>
+    <input type="username" name="username"/>
+    <br/>
+    email
+    <br/>
+    <input type="email" name="email"/>
+    <br/>
+    password
+    <br/>
+    <input type="password" name="password"/>
+    <br/>
+    <br/>
+    <input type="submit">
+</form>
+{% endblock %}

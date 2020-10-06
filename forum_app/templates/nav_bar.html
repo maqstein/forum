@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+    Forum
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/nav_bar.css') }}>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+{% block nav_bar %}
+<nav class="menu">
+    <ul class="menu__list">
+        <li class="menu__group"><a href="{{ url_for('index') }}" class="menu__link">Главная</a></li>
+        <li class="menu__group"><a href="{{ url_for('about') }}" class="menu__link">О форуме</a></li>
+        {% if user %}
+            <li class="menu__group"><a href={{ url_for('create_post_static') }} class="menu__link">Создать пост</a></li>
+            <li class="menu__group"><a href="/user/{{ user.id }}" class="menu__link">{{ user.email }}</a></li>
+            <li class="menu__group"><a href={{ url_for('user_logout') }} class="menu__link">Выход</a></li>
+        {% else %}
+            <li class="menu__group"><a href={{ url_for('get_sign_in_page') }} class="menu__link">Вход</a></li>
+            <li class="menu__group"><a href={{ url_for('register_user_index') }} class="menu__link">Регистрация</a></li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endblock %}

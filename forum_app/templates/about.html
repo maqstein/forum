@@ -1,0 +1,19 @@
+{% extends "nav_bar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/wall.css') }}>
+{% endblock %}
+
+{% block content %}
+    <div class="wall">
+        <div class="post">
+            <div class="post-header">
+                <h1>В чем сила?</h1>
+            </div>
+            <div class="post-content">
+                цель данного форума в моем самообучении(почти) программированию, если вы тут мимоходом, то приглашаю осмотреть мои владения и насладится корявым дизайном и вырвиглазном оформлением сайта :)
+            </div>
+        </div>
+    </div>
+{% endblock %}

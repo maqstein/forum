@@ -1,0 +1,41 @@
+{% extends "nav_bar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/post_view.css') }}>
+{% endblock %}
+
+{% block content %}
+    <div class="page-content">
+        <div class="post">
+            <div class="author">
+                <div class="post-author">автор <a href="/user/{{ author.id }}">{{ author.username }}</a></div>
+            </div>
+            <div class="post-text">
+                {{ post.content }}
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <div id="comment-announce">
+                Комментарии
+            </div>
+            {% for comment in comments %}
+            <div class="single-comment">
+                <div class="comment-author">
+                    <a href="/user/{{ comment.author.id }}">{{ comment.author.username }}</a>
+                </div>
+                <div class="comment-content">
+                    {{ comment.content }}
+                </div>
+            </div>
+            {% endfor %}
+            <div class="add-comment">
+                <form method="post">
+                    <textarea id="comment-input" name="comment_text" cols="10" rows="5" placeholder="Введите текст комментария" required class="textarea"></textarea>
+                    <div id="input-button"><input type="submit"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

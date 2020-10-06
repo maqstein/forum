@@ -1,0 +1,12 @@
+textarea {
+    width: 100%;
+    overflow: auto;
+    resize: none;
+    outline: none;
+}
+
+.update-wrap {
+    margin-top: 2%;
+    width: 80%;
+    padding-left: 10%;
+}

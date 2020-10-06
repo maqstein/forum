@@ -1,0 +1,17 @@
+{% extends "nav_bar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/create_post.css') }}>
+{% endblock %}
+
+{% block content %}
+<div class="input-form">
+    <textarea name="post_text" cols="40" rows="9" placeholder="Введите текст поста" required class="textarea" form="text"></textarea>
+    <!-- <input type="textarea" name="post_text"/> -->
+    <input type="submit" form="text">
+    <br>
+</div>
+<form method="post" enctype="application/json" id="text">
+</form>
+{% endblock %}

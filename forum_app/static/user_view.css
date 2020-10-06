@@ -1,0 +1,51 @@
+.profile-info {
+    width: 60%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 1px;
+    box-shadow: 0px 4px 8px -3px rgba(50, 50, 50, 0.75);
+    padding: 1%;
+}
+
+.profile-description {
+    margin-bottom: 1%;
+}
+
+.posts {
+    width: 80%;
+    margin: auto;
+}
+
+.icons {
+    margin-top:auto;
+    display: inline-block;
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.delete-post-icon {
+    display: block;
+    width: 3%;
+    height: 3%;
+    background-size: cover;
+    float: right;
+    margin: 0% 1%;
+}
+
+.edit-post-icon {
+    display: block;
+    width: 3%;
+    height: 3%;
+    background-size: cover;
+    float: right;
+    margin: 0% 1%;
+}
+
+.post-author {
+    display: inline-block;
+    width: 50%;
+}

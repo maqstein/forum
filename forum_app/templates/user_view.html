@@ -1,0 +1,60 @@
+{% extends "nav_bar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/wall.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', path='/user_view.css') }}>
+
+{% endblock %}
+
+{% block content %}
+<div class="profile-info">
+    <div class="profile-image">
+    </div>
+    <div class="profile-description">
+        Это профиль пользователя {{ author.username }}
+    </div>
+    <div class="registration-date">
+
+    </div>
+    <div class="posts-head"> 
+        Тут отображены посты пользователя
+    </div>
+</div>
+<div class="posts">
+    {% for post in posts %}
+    <div class="post">
+        <div class="content">
+            <div class="post-header">
+                <div class="post-author"><a href="/user/{{ author.id }}">{{ author.username }}</a></div>
+                <div class="icons">
+                    <form method="post">
+                        <input class="delete-post-icon" type="image" src="../icons/delete.svg" alt="Удалить пост">
+                        <input type="hidden" name="Button" value="delete">
+                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                    </form>
+
+                    <form method="post">
+                        <input class="edit-post-icon" type="image" src="../icons/pencil.svg" alt="Изменить пост">
+                        <input type="hidden" name="Button" value="edit">
+                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                    </form>
+                </div>
+            </div>
+            <a href="/post/{{ post.id }}">
+                <div class="post-content">
+                    <div class="post-text-thumbnail">
+                        {{ post.content }}
+                    </div>
+                </div>
+            </a>
+                <div class="like-wrap">
+                    <div class="likes lblock">{{ post.likes_counter }} likes</div>
+                    <div class="dislikes lblock">{{ post.dislikes_counter }} dislikes</div>
+                    <div class="comments_counter lblock">{{ post.comments_counter }} comments</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

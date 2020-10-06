@@ -1,0 +1,23 @@
+.input-form {
+    width: 60% ;
+    margin: 60px auto;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.username  {
+    padding-top: 40px;
+}
+
+.post_text{
+    padding-top: 40px;
+}
+
+.supmitbutton{
+    border: 1px solid red;
+    padding-top: 40px;
+}
+
+.textarea {
+    width: 100%;
+}

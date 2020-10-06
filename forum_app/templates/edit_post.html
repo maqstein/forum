@@ -1,0 +1,27 @@
+{% extends "nav_bar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', path='/wall.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', path='/update_post.css') }}>
+{% endblock %}
+
+{% block content %}
+<div class="wall">
+    <div class="post">
+        <div class="content">
+            <div class="post-content">
+                {{ post.content }}
+            </div>
+        </div>
+    </div>
+    <div class="update-wrap">
+        <textarea name="postUpdate" cols="40" rows="9" placeholder="Дополнить пост" required class="textarea" form="text"></textarea>
+        <!-- <input type="textarea" name="post_text"/> -->
+        <input type="submit" form="text" value="Дополнить">
+        <br>
+    </div>
+</div>
+<form method="post" enctype="application/json" id="text">
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+jinja2
+aiofiles
+sqlalchemy
+databases[postgresql]
+asyncpg
+psycopg2-binary
+pydantic
+python-multipart
+ptvsd==4.3.2

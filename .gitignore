@@ -1,0 +1,4 @@
+*.yml
+*.dockerfile
+/__pycache__
+/my_data
