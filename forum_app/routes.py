@@ -11,7 +11,7 @@ render_about_template
 
 
 from forum_app.validation import CreatePostRequest, RegisterUser, SignIn, CreatePostModel, CreateCommentModel
-from forum_app.exceptions import GetExceptionInfo
+from forum_app.exceptions import get_exception_info
 
 from forum_app.buisness_logic.email import send_email
 
@@ -108,7 +108,7 @@ async def create_comment_view(request: Request, post_id : int, comment_text : st
 
         return redirect(f"/post/{post_id}")
     except:
-        print(GetExceptionInfo())
+        print(get_exception_info())
 
 
 @app.get("/post/{post_id}")

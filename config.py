@@ -5,7 +5,7 @@ FORUM_DOCKER_PORT = os.getenv('FORUM_DOCKER_PORT') if os.getenv('FORUM_DOCKER_PO
 DOMAIN = os.getenv('DOMAIN') if os.getenv('DOMAIN') else 'localhost'
 POSTGRES_URL = os.getenv('POSTGRES_URL')
 
-SMTP_ADRESS = os.getenv('SMTP_ADRESS') if os.getenv('SMTP_ADRESS') else "smtp.gmail.com"
+SMTP_ADDRESS = os.getenv('SMTP_ADDRESS') if os.getenv('SMTP_ADDRESS') else "smtp.gmail.com"
 SMTP_PORT = os.getenv('SMTP_PORT') if os.getenv('SMTP_PORT') else 587
 NEWSLETTER_LOGIN = os.getenv('NEWSLETTER_LOGIN')
 NEWSLETTER_PASSWORD = os.getenv('NEWSLETTER_PASSWORD')
